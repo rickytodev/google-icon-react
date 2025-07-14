@@ -1,12 +1,38 @@
 {
   "name": "google-icon",
-  "module": "index.ts",
+  "version": "0.0.1",
+  "description": "Componente de React para utilizar los iconos con border redondos de Google,para utilizarlo con tailwindCss",
+  "main": "dist/index.js",
+  "browser": "dist-browser/index.js",
+  "author": "Ricardo Vega G",
   "type": "module",
-  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build-node": "tsc index.ts --outDir dist",
+    "build-browser": "tsc index.ts --module ES6 --outDir dist-browser",
+    "build": "npm run build-node && npm run build-browser"
+  },
+  "keywords": [
+    "react",
+    "google",
+    "icon",
+    "component",
+    "typescript",
+    "bun",
+    "icons",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickytodev/google-icon.git"
+  },
+  "exports": {
+    ".": "./index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "5"
   }
 }
