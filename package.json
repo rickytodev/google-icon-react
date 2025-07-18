@@ -1,43 +1,38 @@
 {
   "name": "google-icon-react",
-  "version": "0.0.4",
-  "description": "Componente de React para utilizar los iconos con border redondos de Google,para utilizarlo con tailwindCss",
-  "main": "dist/index.js",
-  "browser": "dist-browser/index.js",
-  "author": "Ricardo Vega G",
-  "type": "module",
-  "license": "MIT",
-  "scripts": {
-    "build-node": "tsc index.ts --outDir dist",
-    "build-browser": "tsc index.ts --module ES6 --outDir dist-browser",
-    "build": "npm run build-node && npm run build-browser"
-  },
-  "keywords": [
-    "react",
-    "google",
-    "icon",
-    "component",
-    "typescript",
-    "bun",
-    "icons",
-    "tailwindcss"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rickytodev/google-icon.git"
-  },
+  "version": "0.2.0",
+  "description": "Componente compatible con React y Preact para iconos de Google con estilo redondeado.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
+      "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
   "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react": "^18.0.0 || ^19.0.0",
     "preact": "^10.0.0"
   },
-  "devDependencies": {
-    "typescript": "^5.0.0"
+  "keywords": [
+    "react",
+    "preact",
+    "icon",
+    "google",
+    "component",
+    "tailwindcss"
+  ],
+  "license": "MIT",
+  "author": "Ricardo Vega G",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickytodev/google-icon.git"
   }
 }

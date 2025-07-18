@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 export type IconParams = {
   icon: string;
   fill?: boolean;
@@ -21,12 +23,12 @@ export type IconParams = {
  */
 export default function GoogleIcon({
   icon,
-  fill,
+  fill = false,
   className,
-  onClick,
   fontFamily,
-  ariaLabel,
-}: IconParams) {
+  ariaLabel = "google icon",
+  onClick,
+}: IconParams): JSX.Element {
   return (
     <span
       className={className ?? ""}
@@ -36,7 +38,7 @@ export default function GoogleIcon({
         userSelect: "none",
       }}
       onClick={onClick}
-      aria-label={ariaLabel ?? "google icon"}
+      aria-label={ariaLabel}
     >
       {icon}
     </span>

@@ -1,2 +1,2 @@
-export { default as GoogleIcon } from "./google-icon";
-export type { IconParams } from "./google-icon";
+export { default as GoogleIcon } from "./google-icon.js";
+export type { IconParams } from "./google-icon.js";
