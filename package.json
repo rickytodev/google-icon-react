@@ -1,6 +1,6 @@
 {
   "name": "google-icon-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Componente de React para utilizar los iconos con border redondos de Google,para utilizarlo con tailwindCss",
   "main": "dist/index.js",
   "browser": "dist-browser/index.js",
@@ -30,6 +30,11 @@
     ".": "./index.ts"
   },
   "peerDependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "google-icon-react": "."
   }
 }
