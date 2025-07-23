@@ -1,35 +1,38 @@
 {
   "name": "google-icon-react",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "Componente compatible con React y Preact para iconos de Google con estilo redondeado.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist-react/index.js",
+      "require": "./dist-react/index.js"
+    },
+    "./preact": {
+      "import": "./dist-preact/index.js",
+      "require": "./dist-preact/index.js"
     }
   },
   "files": [
-    "dist"
+    "dist-react",
+    "dist-preact",
+    "test"
   ],
   "scripts": {
-    "build": "tsc",
+    "build:react": "tsc --project tsconfig.react.json",
+    "build:preact": "tsc --project tsconfig.preact.json",
+    "build": "bun run build:react && bun run build:preact",
     "test": "vitest"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "typescript": "^5",
+    "react": "^18",
+    "preact": "^10",
     "@testing-library/react": "16.3.0",
-    "happy-dom": "18.0.1",
     "vitest": "3.2.4"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.0"
   },
   "keywords": [
     "react",
-    "preact",
     "icon",
     "google",
     "component",
