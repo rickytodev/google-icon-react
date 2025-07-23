@@ -5,13 +5,13 @@ Un componente de React para utilizar los iconos con borde redondeado de Google M
 ## Instalación
 
 ```bash
-npm install google-icon
+npm install google-icon-react
 ```
 
 o
 
 ```bash
-bun add google-icon
+bun add google-icon-react
 ```
 
 ### Dependencia requerida
@@ -35,10 +35,24 @@ import "@fontsource-variable/material-symbols-rounded"; // si solo quieres icono
 import "@fontsource-variable/material-symbols-rounded/fill.css"; // si quieres todas las variantes
 ```
 
+## Maneras de importar
+
+Para `React` es de la siguiente manera:
+
+```tsx
+import GoogleIcon from "google-icon-react";
+```
+
+Para `Preact`, puedes usar:
+
+```tsx
+import GoogleIcon from "google-icon-react/preact";
+```
+
 ## Uso básico
 
 ```tsx
-import GoogleIcon from "google-icon";
+import GoogleIcon from "google-icon-react";
 
 function App() {
   return (
@@ -185,4 +199,4 @@ Simplemente usa el nombre del icono tal como aparece en la página oficial.
 
 ## Contribuir
 
-Las contribuciones son bienvenidas. Por favor, abre un issue o pull request en [GitHub](https://github.com/rickytodev/google-icon).
+Las contribuciones son bienvenidas. Por favor, abre un issue o pull request en [GitHub](https://github.com/rickytodev/google-icon-react).
