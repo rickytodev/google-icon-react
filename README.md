@@ -16,18 +16,23 @@ bun add google-icon-react
 
 ### Dependencia requerida
 
-**⚠️ Importante:** Para que el componente funcione correctamente, debes utilizar el siguiente script en tu proyecto:
+**⚠️ Importante:** Para que el componente funcione correctamente, debes instalar e importar la fuente de iconos de Google Material Symbols:
 
-```js
-<script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+```bash
+npm install @fontsource-variable/material-symbols-rounded
+```
+
+o
+
+```bash
+bun add @fontsource-variable/material-symbols-rounded
 ```
 
 Luego, importa la fuente en el archivo principal de tu aplicación (App.js, \_app.js, layout.tsx, etc.):
 
-```html
-<head>
-  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-</head>
+```javascript
+import "@fontsource-variable/material-symbols-rounded"; // si solo quieres iconos sin fill
+import "@fontsource-variable/material-symbols-rounded/fill.css"; // si quieres todas las variantes
 ```
 
 ## Maneras de importar
@@ -122,14 +127,13 @@ function App() {
 En tu archivo `_app.js` o `layout.tsx`:
 
 ```tsx
+import "@fontsource-variable/material-symbols-rounded"; // si solo quieres iconos sin fill
+import "@fontsource-variable/material-symbols-rounded/fill.css"; // si quieres todas las variantes
 import "./globals.css"; // Tu archivo CSS global
 
 export default function Layout({ children }) {
   return (
     <html>
-      <head>
-        <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-      </head>
       <body>{children}</body>
     </html>
   );
@@ -140,25 +144,33 @@ export default function Layout({ children }) {
 
 En tu archivo `main.tsx` o `App.tsx`:
 
-```html
-<html>
-  <head>
-    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+```tsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "@fontsource-variable/material-symbols-rounded"; // si solo quieres iconos sin fill
+import "@fontsource-variable/material-symbols-rounded/fill.css"; // si quieres todas las variantes
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 ```
 
 ### Astro
 
 En tu archivo de layout principal:
 
-```html
+```astro
+---
+import '@fontsource-variable/material-symbols-rounded'; // si solo quieres iconos sin fill
+import '@fontsource-variable/material-symbols-rounded/fill.css'; // si quieres todas las variantes
+---
+
 <html>
   <head>
-    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <!-- ... -->
   </head>
   <body>
     <slot />

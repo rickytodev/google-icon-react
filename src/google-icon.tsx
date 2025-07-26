@@ -1,7 +1,8 @@
-export type IconParams = React.HTMLAttributes<HTMLElement> & {
+export type IconParams = {
   icon: string;
   fill?: boolean;
   className?: string;
+  fontFamily?: string;
   ariaLabel?: string;
   onClick?: () => void;
 };
@@ -20,20 +21,24 @@ export type IconParams = React.HTMLAttributes<HTMLElement> & {
  */
 export default function GoogleIcon({
   icon,
-  fill,
+  fill = false,
   className,
+  fontFamily,
   ariaLabel = "google icon",
   onClick,
 }: IconParams) {
   return (
-    <>
-      <iconify-icon
-        icon={`material-symbols:${icon}${!fill ? "-outline" : ""}-rounded`}
-        className={`w-fit h-fit ${className ?? ""}`}
-        onClick={onClick}
-        aria-label={ariaLabel}
-        data-testid="google-icon"
-      />
-    </>
+    <span
+      className={className ?? ""}
+      style={{
+        fontVariationSettings: `'FILL' ${fill ? 1 : 0}`,
+        fontFamily: fontFamily ?? "Material Symbols Rounded Variable",
+        userSelect: "none",
+      }}
+      onClick={onClick}
+      aria-label={ariaLabel}
+    >
+      {icon}
+    </span>
   );
 }
