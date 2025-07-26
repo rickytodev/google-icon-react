@@ -2,7 +2,6 @@ export type IconParams = {
   icon: string;
   fill?: boolean;
   className?: string;
-  fontFamily?: string;
   ariaLabel?: string;
   onClick?: () => void;
 };
@@ -21,10 +20,9 @@ export type IconParams = {
  */
 export default function GoogleIcon({
   icon,
-  fill = false,
+  fill,
   className,
-  fontFamily,
-  ariaLabel = "google icon",
+  ariaLabel = "google-icon-react",
   onClick,
 }: IconParams) {
   return (
@@ -32,9 +30,10 @@ export default function GoogleIcon({
       className={className ?? ""}
       style={{
         fontVariationSettings: `'FILL' ${fill ? 1 : 0}`,
-        fontFamily: fontFamily ?? "Material Symbols Rounded Variable",
+        fontFamily: "Material Symbols Rounded Variable",
         userSelect: "none",
       }}
+      data-icon-styles="google-icon-react"
       onClick={onClick}
       aria-label={ariaLabel}
     >
