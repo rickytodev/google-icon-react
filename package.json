@@ -1,6 +1,6 @@
 {
   "name": "google-icon-react",
-  "version": "3.0.7",
+  "version": "3.0.71",
   "description": "Componente compatible con React y Preact para iconos de Google con estilo redondeado.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
