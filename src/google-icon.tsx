@@ -4,6 +4,7 @@ export type IconParams = {
   className?: string;
   ariaLabel?: string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 };
 
 /**
@@ -24,6 +25,7 @@ export default function GoogleIcon({
   className,
   ariaLabel = "google-icon-react",
   onClick,
+  style,
 }: IconParams) {
   return (
     <span
@@ -32,6 +34,7 @@ export default function GoogleIcon({
         fontVariationSettings: `'FILL' ${fill ? 1 : 0}`,
         fontFamily: "Material Symbols Rounded Variable",
         userSelect: "none",
+        ...style,
       }}
       data-icon-styles="google-icon-react"
       onClick={onClick}
